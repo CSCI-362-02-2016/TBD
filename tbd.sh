@@ -7,6 +7,7 @@ ls -x -lh > "list.html"
 
 # Modify html file with <html> and other tags
 # https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux
+sed -i "1 iListing contents of $PWD" list.html
 sed -i '1 i<html>' list.html
 sed -i '$ a</html>' list.html
 sed -i '1~2a<p>' list.html
