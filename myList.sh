@@ -1,5 +1,7 @@
 #!/bin/bash
-# This script will display a list of all the top-level contents of the current directory in your browser
+# Authors: Team TBD - Walter Blair, Nicholas Johnson, Matthew Claudon
+# Created for CSCI 362 Fall 2016
+# This script will display a list of all the top-level contents of the current directory in your browser. The script pipes output of ls to a new file list.html and then modifies the file using sed to add html tags. Finally, the script opens list.html in a browser.
 
 # Send list of top-level directory contents of containing directory to new html file
 # Sources: http://www.rapidtables.com/code/linux/ls.htm
