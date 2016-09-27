@@ -1,9 +1,9 @@
 #include <stdio.h>
-#include "hello.c"
-#include "pidgin-2.11.0/libpurple/core.c"
+//#include "../pidgin-2.11.0/libpurple/core.c"
+#include "../pidgin-2.11.0/libpurple/idle.c"
 
 void main(void) {
-	hello();
-	purple_core_get_version();
+	purple_idle_get_ui_ops();
+	//purple_core_get_version();
 	return;
 }
