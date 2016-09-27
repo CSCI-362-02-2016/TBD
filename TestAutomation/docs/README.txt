@@ -1,4 +1,4 @@
-## Team TBD
+Team TBD
 
 Chapters 1 & 2 of term project published as pdf
 
