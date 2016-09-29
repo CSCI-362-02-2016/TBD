@@ -1,5 +1,5 @@
 #!/bin/bash
 #  Compiles nicholas-driver.c */
-cc nicholas-driver.c -o "nicholas-driver"
+g++ nicholas-driver.c `pkg-config --cflags --libs glib-2.0` -o "nicholas-driver"
 #  Then calls nicholas-driver binary */
 ./nicholas-driver
