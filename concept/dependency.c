@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include "dependency.h"
 
 void dep(void) {
-	printf("Dependency");
+	printf("Hello, Dependency\n");
 	return;	
 }

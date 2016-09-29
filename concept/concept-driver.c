@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "hello.c"
+#include "hello.h"
+#include "dependency.h"
 
 void main(void) {
 	hello();
