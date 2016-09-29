@@ -3,5 +3,6 @@
 
 void main(void) {
 	hello();
+	dep();
 	return;
 }
