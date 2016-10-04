@@ -5,5 +5,11 @@
 
 cc -c pidgin-eclipse/libpurple/buddyicon.c `pkg-config --cflags --libs glib-2.0` -o "walter-driver" 
 
+# Concept for compiling all dependencies
+# Should we instead just call the configure script and make the whole thing and run off that?
+cc -c hello.c -o "hello.o"
+cc -c dependency.c -o "dependency.o"
+cc concept-driver.c hello.o dependency.o -o "concept-driver"
+
 #  Then calls test-driver binary */
 # ./pidgin-eclipse/walter-driver
