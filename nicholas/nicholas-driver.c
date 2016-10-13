@@ -1,7 +1,6 @@
 #include <stdio.h>
-#include "../pidgin-2.11.0/libpurple/core.c"
-//#include "../pidgin-2.11.0/libpurple/idle.c"
-//#include "../pidgin-2.11.0/libpurple/version.c"
+#include "internal.h"
+#include "pidgin.h"
 
 int main(void) {
 	purple_core_get_version();
