@@ -40,7 +40,7 @@ class testCaseMono {
 			System.out.println("File not found!");
 		}
 
-		System.out.format("%20s%20s\n", "Test Case", ID);
+		System.out.println("<div style = 'float: left; width: 200px'>Test Case</span><div style = 'float: right; width: 100px'>" + ID + "</span>");
 		System.out.format("%20s%20s\n", "Test Requirement", req);
 		System.out.format("%20s%20s\n", "Component", comp);
 		System.out.format("%20s%20s\n", "Method", method);
