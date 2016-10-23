@@ -7,22 +7,25 @@
 #### Begin script
 ## Initialize testReport.html
 
-## Finding drivers using relative path and cd to driver directory
+## Finding drivers using relative path and cd to main directory
 
 parent_path=$( cd "$(dirname "${BASH_SOURCE}")" ; pwd -P )
 cd "$parent_path"
-cd ../testCasesExecutables
+cd ..
 
 ## Make these into .jar executables later so no need to javac?
-
-javac -classpath "../" testCase1.java
+javac -classpath "." testCasesExecutables/testCase1.java
 
 #### TestCase1
 
 ## Read testCase1.txt for command-line args
 
-## Run testCase1
+### Run testCase1 (Version 1, where command line args are params)
+##cd testCasesExecutables
+##java -cp "..:./" testCase1 square 2.0
 
-java -classpath "../:." testCase1 2.0
+### Run testCase1 (Version 2, where command line args is testCase.txt)
+cd testCasesExecutables
+java -cp "..:./" testCase1 ../testCases/testCase1.txt
 
 ## Send output to testReport.html
