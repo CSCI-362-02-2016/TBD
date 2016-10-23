@@ -20,15 +20,7 @@ sed -i '$ a</html>' reports/report.html
 ## Make these into .jar executables later so no need to javac?
 javac -classpath "." testCasesExecutables/*.java
 
-#### TestCase1
-
-## Read testCase1.txt for command-line args
-
-### Run testCase1 (Version 1, where command line args are params)
-##cd testCasesExecutables
-##java -cp "..:./" testCase1 square 2.0
-
-### Run testCases (Version 2, where command line args is testCase.txt)
+#### Run testCases (Version 2, where command line args is testCase.txt)
 ### See http://stackoverflow.com/questions/10523415/bash-script-to-execute-command-on-all-files-in-directory
 
 cd testCasesExecutables
@@ -36,7 +28,6 @@ for file in ../testCases/*
 do
 	java -cp "..:./" testCaseMono "$file" >> ../reports/report.html
 done
-
 sed -i '$ a</html>' ../reports/report.html
 sed -i '1~2a<p>' ../reports/report.html
 sed -i '2~1a</p>' ../reports/report.html

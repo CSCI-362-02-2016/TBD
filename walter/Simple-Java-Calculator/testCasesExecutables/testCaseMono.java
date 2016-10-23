@@ -7,43 +7,52 @@ class testCaseMono {
 		Calculator calc = new Calculator();
 
 		// args is file name, read file to get contents
-		String ID = "";		
+		String ID = "";	
+		String req = "";
+		String comp = "";	
+		String method = "";
 		Double num = -1.0;
+		Double expect = -1.0;
 		String mode = "";	
 		try {
 			File file = new File(args[0]);
 			Scanner scan = new Scanner(file);
-			while(scan.hasNextLine()) {
-				String s = scan.nextLine();
-				if(s.contains("ID"))
-					ID = s.substring(3);
-				if(s.contains("cos"))
+			ID = scan.nextLine().substring(3);
+			req = scan.nextLine().substring(4);
+			comp = scan.nextLine().substring(5);
+			method = scan.nextLine().substring(7);
+				if(method.contains("cos"))
 					mode = "cos";
-				if(s.contains("sin"))
+				if(method.contains("sin"))
 					mode = "sin";
-				if(s.contains("tan"))
+				if(method.contains("tan"))
 					mode = "tan";
-				if(s.contains("square"))
+				if(method.contains("square"))
 					mode = "square";
-				if(s.contains("squareRoot"))
+				if(method.contains("squareRoot"))
 					mode = "squareRoot";
-				if(s.contains("oneDividedBy"))
+				if(method.contains("oneDividedBy"))
 					mode = "oneDevidedBy";
-				if(s.contains("Inputs")) {
-					String n = s.substring(7);	
-					num = Double.parseDouble(n);
-				}
-			}
+			num = Double.parseDouble(scan.nextLine().substring(7));
+			expect = Double.parseDouble(scan.nextLine().substring(7));	
 		}
 		catch(Exception e) {
 			System.out.println("File not found!");
 		}
+
+		System.out.format("%20s%20s\n", "Test Case", ID);
+		System.out.format("%20s%20s\n", "Test Requirement", req);
+		System.out.format("%20s%20s\n", "Component", comp);
+		System.out.format("%20s%20s\n", "Method", method);
+		System.out.format("%20s%20.0f\n", "Inputs: ", num);
+		System.out.format("%20s%20.0f\n", "Expected Results: ", expect);
 		
 		// This will contain all of the possible method modes that this driver can 
-		// execute and select the appropriate one for the test case
+		// execute and select the appropriate one for the test case.
+		// Is there a way to clean up by using String mode directly in the method call?
 		// public Double calculateMono(MonoOperatorModes newMode, Double num)
 		if(mode.equals("cos")) {
-			System.out.println("testCase" + ID + ": calculateMono(" + mode + ", " + num + "): " +
+			System.out.println("Test Case " + ID + ": calculateMono(" + mode + ", " + num + "): " +
 		 		calc.calculateMono(Calculator.MonoOperatorModes.cos, num));
 		}		
 		else if(mode.equals("sin")) {
