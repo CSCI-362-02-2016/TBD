@@ -1,6 +1,6 @@
 ID	08
 Req	08
 Comp	Calculator.java
-Method	public Double calculateMono(MonoOperatorModes sin, Double num)
-Inputs	1.0
-Expect	0.017452406437
+Method	public Double calculateMono(MonoOperatorModes cos, Double num)
+Inputs	0.0
+Expect	1.0

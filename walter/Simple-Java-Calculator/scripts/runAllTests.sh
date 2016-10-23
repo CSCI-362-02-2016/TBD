@@ -5,13 +5,17 @@
 # For -classpath usage with java execution, See http://stackoverflow.com/questions/34413/why-am-i-getting-a-noclassdeffounderror-in-java
 
 #### Begin script
-## Initialize testReport.html
 
 ## Finding drivers using relative path and cd to main directory
 
 parent_path=$( cd "$(dirname "${BASH_SOURCE}")" ; pwd -P )
 cd "$parent_path"
 cd ..
+
+## Initialize testReport.html
+printf "Team TBD Testing Report" > reports/report.html
+sed -i '1 i<html>' reports/report.html
+sed -i '$ a</html>' reports/report.html
 
 ## Make these into .jar executables later so no need to javac?
 javac -classpath "." testCasesExecutables/*.java
@@ -24,18 +28,24 @@ javac -classpath "." testCasesExecutables/*.java
 ##cd testCasesExecutables
 ##java -cp "..:./" testCase1 square 2.0
 
-### Run testCase1 (Version 2, where command line args is testCase.txt)
+### Run testCases (Version 2, where command line args is testCase.txt)
+### See http://stackoverflow.com/questions/10523415/bash-script-to-execute-command-on-all-files-in-directory
+
 cd testCasesExecutables
-java -cp "..:./" testCase1 ../testCases/testCase1.txt
+for file in ../testCases/*
+do
+	java -cp "..:./" testCaseMono "$file" >> ../reports/report.html
+done
 
-### Run remaining testCases
-java -cp "..:./" testCase1 ../testCases/testCase2.txt
-java -cp "..:./" testCase1 ../testCases/testCase3.txt
-java -cp "..:./" testCase1 ../testCases/testCase4.txt
-java -cp "..:./" testCase1 ../testCases/testCase5.txt
-java -cp "..:./" testCase1 ../testCases/testCase6.txt
-java -cp "..:./" testCase1 ../testCases/testCase7.txt
-java -cp "..:./" testCase1 ../testCases/testCase8.txt
-java -cp "..:./" testCase1 ../testCases/testCase9.txt
+sed -i '$ a</html>' ../reports/report.html
+sed -i '1~2a<p>' ../reports/report.html
+sed -i '2~1a</p>' ../reports/report.html
 
-## Send output to testReport.html
+## Display report.html in browser
+if which xdg-open > /dev/null
+then
+  xdg-open "../reports/report.html" 
+elif which gnome-open > /dev/null
+then
+  gnome-open URL
+fi

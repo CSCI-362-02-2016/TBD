@@ -1,0 +1,6 @@
+ID	11
+Req	11
+Comp	Calculator.java
+Method	public Double calculateMono(MonoOperatorModes tan, Double num)
+Inputs	1.0
+Expect	1.557407724655

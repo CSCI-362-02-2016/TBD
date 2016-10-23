@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class testCase1 {
+class testCaseMono {
 	public static void main(String[] args) {
 		// Instance of Calculator class
 		Calculator calc = new Calculator();
