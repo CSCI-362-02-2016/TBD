@@ -14,7 +14,7 @@ cd "$parent_path"
 cd ..
 
 ## Make these into .jar executables later so no need to javac?
-javac -classpath "." testCasesExecutables/testCase1.java
+javac -classpath "." testCasesExecutables/*.java
 
 #### TestCase1
 
@@ -27,5 +27,15 @@ javac -classpath "." testCasesExecutables/testCase1.java
 ### Run testCase1 (Version 2, where command line args is testCase.txt)
 cd testCasesExecutables
 java -cp "..:./" testCase1 ../testCases/testCase1.txt
+
+### Run remaining testCases
+java -cp "..:./" testCase1 ../testCases/testCase2.txt
+java -cp "..:./" testCase1 ../testCases/testCase3.txt
+java -cp "..:./" testCase1 ../testCases/testCase4.txt
+java -cp "..:./" testCase1 ../testCases/testCase5.txt
+java -cp "..:./" testCase1 ../testCases/testCase6.txt
+java -cp "..:./" testCase1 ../testCases/testCase7.txt
+java -cp "..:./" testCase1 ../testCases/testCase8.txt
+java -cp "..:./" testCase1 ../testCases/testCase9.txt
 
 ## Send output to testReport.html

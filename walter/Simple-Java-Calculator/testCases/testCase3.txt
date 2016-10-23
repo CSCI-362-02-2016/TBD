@@ -1,0 +1,6 @@
+ID	03
+Req	03
+Comp	Calculator.java
+Method	public Double calculateMono(MonoOperatorModes squareRoot, Double num)
+Inputs	9.0
+Expect	3.0
