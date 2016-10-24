@@ -12,7 +12,6 @@ class testCaseMono {
 		String comp = "";	
 		String method = "";
 		Double num = -1.0;
-		Double expect = -1.0;
 		String mode = "";	
 		try {
 			File file = new File(args[0]);
@@ -33,8 +32,7 @@ class testCaseMono {
 					mode = "squareRoot";
 				if(method.contains("oneDividedBy"))
 					mode = "oneDevidedBy";
-			num = Double.parseDouble(scan.nextLine().substring(7));
-			expect = Double.parseDouble(scan.nextLine().substring(7));	
+			num = Double.parseDouble(scan.nextLine().substring(7));	
 		}
 		catch(Exception e) {
 			System.out.println("File not found!");
@@ -45,32 +43,46 @@ class testCaseMono {
 		System.out.println("<div class='table1'>Component Tested</div><div class='table2'>" + comp + "</div>");
 		System.out.println("<div class='table1'>Method Tested</div><div class='table2'>" + method + "</div>");
 		System.out.println("<div class='table1'>Inputs: </div><div class='table2'>" + num + "</div>");
-		System.out.println("<div class='table1'>Expected Results: </div><div class='table2'>" + expect + "</div>");
 		
 		// This will contain all of the possible method modes that this driver can 
 		// execute and select the appropriate one for the test case.
 		// Is there a way to clean up by using String mode directly in the method call?
 		// public Double calculateMono(MonoOperatorModes newMode, Double num)
+		Double result = -1.0;
+		Double o = -2.0;
+		oracleMono oracle = new oracleMono();
 		if(mode.equals("cos")) {
-			System.out.println("<div class='table1'>Actual Results: </div><div class='table2'>" + calc.calculateMono(Calculator.MonoOperatorModes.cos, num) + "</div>");
+			result = calc.calculateMono(Calculator.MonoOperatorModes.cos, num);
+			o = oracle.calc("cos", num);
 		}		
 		else if(mode.equals("sin")) {
-			System.out.println("<div class='table1'>Actual Results: </div><div class='table2'>" + calc.calculateMono(Calculator.MonoOperatorModes.sin, num) + "</div>");
+			result = calc.calculateMono(Calculator.MonoOperatorModes.sin, num);
+			o = oracle.calc("sin", num);
 		}		
 		else if(mode.equals("tan")) {
-			System.out.println("<div class='table1'>Actual Results: </div><div class='table2'>" + calc.calculateMono(Calculator.MonoOperatorModes.tan, num) + "</div>");
+			result = calc.calculateMono(Calculator.MonoOperatorModes.tan, num);
+			o = oracle.calc("tan", num);
 		}		
 		else if(mode.equals("square")) {
-			System.out.println("<div class='table1'>Actual Results: </div><div class='table2'>" + calc.calculateMono(Calculator.MonoOperatorModes.square, num) + "</div>");
+			result = calc.calculateMono(Calculator.MonoOperatorModes.square, num);
+			o = oracle.calc("square", num);
 		}
 		else if(mode.equals("squareRoot")) {
-			System.out.println("<div class='table1'>Actual Results: </div><div class='table2'>" + calc.calculateMono(Calculator.MonoOperatorModes.squareRoot, num) + "</div>");
+			result = calc.calculateMono(Calculator.MonoOperatorModes.squareRoot, num);
+			o = oracle.calc("squareRoot", num);
 		}
 		else if(mode.equals("oneDevidedBy")) {
-			System.out.println("<div class='table1'>Actual Results: </div><div class='table2'>" + calc.calculateMono(Calculator.MonoOperatorModes.oneDevidedBy, num) + "</div>");
+			result = calc.calculateMono(Calculator.MonoOperatorModes.oneDevidedBy, num);
+			o = oracle.calc("oneDividedBy", num);
 		}
 		else {
 			System.out.println("Oops!");
 		}
+		System.out.println("<div class='table1'>Actual Results: </div><div class='table2'>" + result + "</div>");
+		System.out.println("<div class='table1'>Expected Results: </div><div class='table2'>" + o + "</div>");
+		if(result.equals(o))
+			System.out.println("<div class='table1'>Test Result: </div><div class='pass'> Pass </div>");
+		else
+			System.out.println("<div class='table1'>Test Result: </div><div class='fail'> Fail </div>");
 	}
 }
