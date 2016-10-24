@@ -40,40 +40,34 @@ class testCaseMono {
 			System.out.println("File not found!");
 		}
 
-		System.out.println("<div style = 'float: left; width: 200px'>Test Case</span><div style = 'float: right; width: 100px'>" + ID + "</span>");
-		System.out.format("%20s%20s\n", "Test Requirement", req);
-		System.out.format("%20s%20s\n", "Component", comp);
-		System.out.format("%20s%20s\n", "Method", method);
-		System.out.format("%20s%20.0f\n", "Inputs: ", num);
-		System.out.format("%20s%20.0f\n", "Expected Results: ", expect);
+		System.out.println("<div class='table1'>Test Case</div><div class='table2'>" + ID + "</div>");
+		System.out.println("<div class='table1'>Test Requirement</div><div class='table2'>" + req + "</div>");
+		System.out.println("<div class='table1'>Component Tested</div><div class='table2'>" + comp + "</div>");
+		System.out.println("<div class='table1'>Method Tested</div><div class='table2'>" + method + "</div>");
+		System.out.println("<div class='table1'>Inputs: </div><div class='table2'>" + num + "</div>");
+		System.out.println("<div class='table1'>Expected Results: </div><div class='table2'>" + expect + "</div>");
 		
 		// This will contain all of the possible method modes that this driver can 
 		// execute and select the appropriate one for the test case.
 		// Is there a way to clean up by using String mode directly in the method call?
 		// public Double calculateMono(MonoOperatorModes newMode, Double num)
 		if(mode.equals("cos")) {
-			System.out.println("Test Case " + ID + ": calculateMono(" + mode + ", " + num + "): " +
-		 		calc.calculateMono(Calculator.MonoOperatorModes.cos, num));
+			System.out.println("<div class='table1'>Actual Results: </div><div class='table2'>" + calc.calculateMono(Calculator.MonoOperatorModes.cos, num) + "</div>");
 		}		
 		else if(mode.equals("sin")) {
-			System.out.println("testCase" + ID + ": calculateMono(" + mode + ", " + num + "): " +
-		 		calc.calculateMono(Calculator.MonoOperatorModes.sin, num));
+			System.out.println("<div class='table1'>Actual Results: </div><div class='table2'>" + calc.calculateMono(Calculator.MonoOperatorModes.sin, num) + "</div>");
 		}		
 		else if(mode.equals("tan")) {
-			System.out.println("testCase" + ID + ": calculateMono(" + mode + ", " + num + "): " +
-		 		calc.calculateMono(Calculator.MonoOperatorModes.tan, num));
+			System.out.println("<div class='table1'>Actual Results: </div><div class='table2'>" + calc.calculateMono(Calculator.MonoOperatorModes.tan, num) + "</div>");
 		}		
 		else if(mode.equals("square")) {
-			System.out.println("testCase" + ID + ": calculateMono(" + mode + ", " + num + "): " +
-		 		calc.calculateMono(Calculator.MonoOperatorModes.square, num));
+			System.out.println("<div class='table1'>Actual Results: </div><div class='table2'>" + calc.calculateMono(Calculator.MonoOperatorModes.square, num) + "</div>");
 		}
 		else if(mode.equals("squareRoot")) {
-			System.out.println("testCase" + ID + ": calculateMono(" + mode + ", " + num + "): " +
-		 		calc.calculateMono(Calculator.MonoOperatorModes.squareRoot, num));
+			System.out.println("<div class='table1'>Actual Results: </div><div class='table2'>" + calc.calculateMono(Calculator.MonoOperatorModes.squareRoot, num) + "</div>");
 		}
 		else if(mode.equals("oneDevidedBy")) {
-			System.out.println("testCase" + ID + ": calculateMono(oneDividedBy, " + num + "): " +
-		 		calc.calculateMono(Calculator.MonoOperatorModes.oneDevidedBy, num));
+			System.out.println("<div class='table1'>Actual Results: </div><div class='table2'>" + calc.calculateMono(Calculator.MonoOperatorModes.oneDevidedBy, num) + "</div>");
 		}
 		else {
 			System.out.println("Oops!");
