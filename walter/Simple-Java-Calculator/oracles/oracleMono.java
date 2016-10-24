@@ -1,3 +1,6 @@
+// Uses Math library just like most of the calculations in the Simple-Java-Calculator...
+// Need to find independent methods for calculations?
+
 class oracleMono {
 	public Double calc(String mode, Double d) {
 		if(mode.equals("cos")) {
