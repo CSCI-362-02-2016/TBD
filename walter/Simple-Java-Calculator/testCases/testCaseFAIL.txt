@@ -1,0 +1,6 @@
+ID	FAIL
+Req	The FAIL function doesn't exist, mercifully
+Comp	Calculator.java
+Method	public Double calculateMono(MonoOperatorModes FAIL, Double num)
+Inputs	1.0
+Expect	1.0
