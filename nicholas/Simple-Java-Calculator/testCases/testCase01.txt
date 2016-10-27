@@ -4,3 +4,4 @@ Comp	Calculator.java
 Method	public Double calculateMono(MonoOperatorModes square, Double num)
 Inputs	2.0
 Expect	4.0
+Driver "test"

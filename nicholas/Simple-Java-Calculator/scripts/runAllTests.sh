@@ -35,19 +35,62 @@ javac -cp "./project/src:./oracles" testCasesExecutables/*.java
 cd testCasesExecutables
 for file in ../testCases/*
 do
+	# read the files http://www.cyberciti.biz/faq/unix-howto-read-line-by-line-from-file/
+	while IFS= read -r line
+	do
+		if [[ $line == *"ID"* ]]
+		then
+			echo "$line";
+		fi
+
+		if [[ $line == *"Req"* ]]
+		then
+			echo "$line";
+		fi
+
+		if [[ $line == *"Comp"* ]]
+		then
+			echo "$line";
+		fi
+
+		if [[ $line == *"Method"* ]]
+		then
+			echo "$line";
+		fi
+
+		if [[ $line == *"Inputs"* ]]
+		then
+			input=$(echo $line | tr -dc '.0-9')
+			echo $input;
+		fi
+        
+		if [[ $line == *"Expect"* ]]
+		then
+			echo "$line";
+		fi
+
+		if [[ $line == *"Driver"* ]]
+		then
+			echo "$line";
+		fi
+
+
+	done <"$file"
+
 	echo -e "<div class="container">" >> ../reports/report$DATE.html
 	java -cp "..:./:../oracles" testCaseMono "$file" >> ../reports/report$DATE.html
 	echo -e "</div>" >> ../reports/report$DATE.html
 done
+
 sed -i '$ a</html>' ../reports/report$DATE.html
 sed -i '1~2a<p>' ../reports/report$DATE.html
 sed -i '2~1a</p>' ../reports/report$DATE.html
 
 ## Display report.html in browser
-if which xdg-open > /dev/null
-then
-  xdg-open "../reports/report$DATE.html" 
-elif which gnome-open > /dev/null
-then
-  gnome-open URL
-fi
+#if which xdg-open > /dev/null
+#then
+#  xdg-open "../reports/report$DATE.html" 
+#elif which gnome-open > /dev/null
+#then
+#  gnome-open URL
+#fi
