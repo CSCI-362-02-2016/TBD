@@ -28,7 +28,7 @@ sed -i '$ a</html>' reports/report$DATE.html
 
 
 ## Make these into .jar executables later so no need to javac?
-javac -cp "./project/src:./oracles" testCasesExecutables/*.java
+javac -cp "../project/src" testCasesExecutables/*.java
 
 #### Run testCases (Version 2, where command line args is testCase.txt)
 ### See http://stackoverflow.com/questions/10523415/bash-script-to-execute-command-on-all-files-in-directory
@@ -81,13 +81,13 @@ do
 			echo "$driver";
 		fi
 		
-		#java -cp $driver "$input" >> $output
+		java -cp $driver "$input" >> $output
 
 
 	done <"$file"
 
 	echo -e "<div class="container">" >> ../reports/report$DATE.html
-	java -cp "..:./:../oracles" testCaseMono "$file" >> ../reports/report$DATE.html
+	#java -cp "..:./:../oracles" testCaseMono "$file" >> ../reports/report$DATE.html
 	echo -e "</div>" >> ../reports/report$DATE.html
 done
 
