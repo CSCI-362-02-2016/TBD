@@ -15,6 +15,7 @@ cd "$parent_path"
 cd ..
 
 ## Initialize testReport.html
+output="null"
 DATE=$(date +"-%Y-%m-%d")
 printf "<link rel='stylesheet' type='text/css' href='../docs/style.css'>" > reports/report$DATE.html
 sed -i '1 i<head>' reports/report$DATE.html
@@ -40,22 +41,26 @@ do
 	do
 		if [[ $line == *"ID"* ]]
 		then
-			echo "$line";
+			ID=$(echo $line | tr -dc '.0-9')
+			echo $ID;
 		fi
 
 		if [[ $line == *"Req"* ]]
 		then
-			echo "$line";
+			req=$line;
+			echo "$req";
 		fi
 
 		if [[ $line == *"Comp"* ]]
 		then
-			echo "$line";
+			comp=$line;
+			echo "$comp";
 		fi
 
 		if [[ $line == *"Method"* ]]
 		then
-			echo "$line";
+			method=$line;
+			echo "$method";
 		fi
 
 		if [[ $line == *"Inputs"* ]]
@@ -66,13 +71,17 @@ do
         
 		if [[ $line == *"Expect"* ]]
 		then
-			echo "$line";
+			expect=$line;
+			echo "$expect";
 		fi
 
 		if [[ $line == *"Driver"* ]]
 		then
-			echo "$line";
+			driver=$(echo $line | cut -d ' ' -f2)
+			echo "$driver";
 		fi
+		
+		#java -cp $driver "$input" >> $output
 
 
 	done <"$file"
