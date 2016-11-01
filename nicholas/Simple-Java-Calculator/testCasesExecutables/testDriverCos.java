@@ -8,7 +8,8 @@ class testDriverCos {
 
 		// args is input, test that args contains these
 		try {
-			return calc.calculateMono(Calculator.MonoOperatorModes.cos, args[0]);
+			Double num = Double.parseDouble(args[0]);
+			return calc.calculateMono(Calculator.MonoOperatorModes.cos, num);
 		}
 		catch(Exception e) {
 			System.out.println("Need command-line args!");

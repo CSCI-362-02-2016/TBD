@@ -8,7 +8,8 @@ class testDriverTan {
 
 		// args is input, test that args contains these
 		try {
-			return calc.calculateMono(Calculator.MonoOperatorModes.tan, args[0]);
+			Double num = Double.parseDouble(args[0]);
+			return calc.calculateMono(Calculator.MonoOperatorModes.tan, num);
 		}
 		catch(Exception e) {
 			System.out.println("Need command-line args!");

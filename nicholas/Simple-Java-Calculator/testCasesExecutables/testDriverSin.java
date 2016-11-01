@@ -8,7 +8,8 @@ class testDriverSin {
 
 		// args is input, test that args contains these
 		try {
-			return calc.calculateMono(Calculator.MonoOperatorModes.sin, args[0]);
+			Double num = Double.parseDouble(args[0]);
+			return calc.calculateMono(Calculator.MonoOperatorModes.sin, num);
 		}
 		catch(Exception e) {
 			System.out.println("Need command-line args!");
