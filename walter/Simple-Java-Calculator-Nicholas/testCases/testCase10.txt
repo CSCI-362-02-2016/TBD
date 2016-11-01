@@ -1,0 +1,6 @@
+ID	10
+Req	Computing the sine of the input
+Comp	Calculator.java
+Method	public Double calculateMono(MonoOperatorModes sin, Double num)
+Inputs	0.0
+Expect	0.0
