@@ -4,3 +4,4 @@ Comp	Calculator.java
 Method	public Double calculateMono(MonoOperatorModes cos, Double num)
 Inputs	0.0
 Expect	1.0
+Driver	testDriverCos

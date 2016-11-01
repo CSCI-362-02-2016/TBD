@@ -4,3 +4,4 @@ Comp	Calculator.java
 Method	public Double calculateMono(MonoOperatorModes oneDividedBy, Double num)
 Inputs	1.0
 Expect	1.0
+Driver	testDriverOneDividedBy
