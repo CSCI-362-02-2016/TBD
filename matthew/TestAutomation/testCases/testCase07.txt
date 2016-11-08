@@ -1,0 +1,7 @@
+ID	7
+Req	Computing the cosine of the input
+Comp	Calculator.java
+Method	public Double calculateMono(MonoOperatorModes cos, Double num)
+Inputs	1.0
+Expect	0.540302305868
+Driver	test
