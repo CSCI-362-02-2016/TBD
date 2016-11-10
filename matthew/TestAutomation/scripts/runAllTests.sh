@@ -29,8 +29,9 @@ for file in ../testCases/*; do
 	driver=$(sed -n '7p' "$file" | cut -f2 -d$'\t')
 
 	#Get result from driver
+	javac ../testCaseExecutables/$driver.java
 	#Not sure how do...
-	#result=$(
+	result=$(java ../testCaseExecutables/$driver)
 
 	#Dump test case info into terminal
 	echo "---------------------"
