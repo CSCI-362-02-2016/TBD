@@ -1,5 +1,5 @@
 ID	3
-Req	Calculating the square root of the input
+Req	Calculate the square root of the input
 Comp	Calculator.java
 Method	public Double calculateMono(MonoOperatorModes squareRoot, Double num)
 Inputs	9.0

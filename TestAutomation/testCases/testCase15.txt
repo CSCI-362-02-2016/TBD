@@ -1,5 +1,5 @@
 ID	15
-Req	Computing the cosine of the input
+Req	Compute the cosine of the input
 Comp	Calculator.java
 Method	public Double calculateMono(MonoOperatorModes cos, Double num)
 Inputs	-1.0
