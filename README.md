@@ -8,10 +8,10 @@ Now focusing on testing the Calculator.java file.
 
 -To run our testing framework, run scripts/runAllScripts.sh at the command line.
 
---scripts/runAllTests.sh is a shell script that compiles and executes each testCase.java driver, passing the appropriate testCase.txt file as a command line argument.
+--TestAutomation/scripts/runAllTests.sh is a shell script that compiles and executes each testCase.java driver, reads each test case, and passes test case input to appropriate driver as a command line argument.
 
---Each testCase.java driver takes a testCase.txt file name as a command line arg and reads the inputs specified in the file. The driver then executes the specified Calculator method, passing the specified inputs as parameters. Each driver can run multiple testCase.txt test cases, because the method that it chooses to run is specified in each test case file. The driver also runs an oracle.java file that calculates and returns expected results that are compared to the actual results produced by the Simple-Java-Calculator.
+--Each testCase.java driver takes an input value a command line arg. The driver then executes the specified Calculator method and returns the output to the script. The script compares the returned output to expected results specified in the test case and displays the html report in a browser.
 
 --testCase.txt file contains the details of each test case.
 
-Chapters 1, 2 and 3 of term project published as pdf
+Chapters 1, 2, 3, and 4 of term project published as pdf
