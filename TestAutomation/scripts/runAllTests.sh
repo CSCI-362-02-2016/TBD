@@ -1,3 +1,6 @@
+#Change to directory of script.
+cd "$(dirname "$0")"
+
 #Create report
 echo "<!DOCTYPE html>
 <html>
@@ -28,10 +31,13 @@ for file in ../testCases/*; do
 	expected=$(sed -n '6p' "$file" | cut -f2 -d$'\t')
 	driver=$(sed -n '7p' "$file" | cut -f2 -d$'\t')
 
-	#Get result from driver
+	#Run the correct driver
 	javac -cp "../project/src" ../testCasesExecutables/$driver.java
-	#Not sure how do...
+
+	#Change to parent directory
 	cd ../testCasesExecutables
+
+	#Get result from driver
 	result=$(java -cp "./:../project/src" $driver $input)
 
 	#Dump test case info into terminal
