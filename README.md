@@ -18,7 +18,7 @@ Chapters 1, 2, 3, and 4 of term project published as pdf
 
 11/15 Notes  
 Edits - "Calculates" in testcase.txt  
-Put more info in report - class name  
+Put more info in report e.g. class name, requirement  
 Result should be 'pass'/'fail'  
 
 Bigger edits  
