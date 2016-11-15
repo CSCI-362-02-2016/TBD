@@ -23,7 +23,8 @@ Result should be 'pass'/'fail'
 
 Bigger edits  
 Script should deal with rounding with expected results calculated independently  
-Call script from TestAutomation - run script at top level  
+Call script from TestAutomation - run script at top level
+Check that we can clone TestAutomation to anywhere and it still runs
 
 Final stuff  
 Fault injections in src  
