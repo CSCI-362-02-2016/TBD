@@ -15,3 +15,19 @@ Now focusing on testing the Calculator.java file.
 --testCase.txt file contains the details of each test case.
 
 Chapters 1, 2, 3, and 4 of term project published as pdf
+
+11/15 Notes
+Edits - "Calculates" in testcase.txt
+Put more info in report - class name
+Result should be 'pass'/'fail'
+
+Bigger edits
+Script should deal with rounding
+Call script from anywhere - run script at top level
+
+Final stuff
+Fault injections in src
+Comment code
+Finished report with everything in it
+Poster (SSM Poster Session - ready)
+Presentation (20-25min, >5min each person) - spanning whole semester experience - no script demo
