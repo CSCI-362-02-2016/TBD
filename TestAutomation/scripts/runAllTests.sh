@@ -62,6 +62,7 @@ for file in ../testCases/*; do
 				<div class=\"cell\">$expected</div>
 				<div class=\"cell\">$result</div>" >> ../reports/report.html
 
+	#Compare the output to expected and determine pass or fail
 	if [ "$expected" == "$result" ]; then
 		echo "				<div class=\"cell pass\">Pass</div>" >> ../reports/report.html
 	else
