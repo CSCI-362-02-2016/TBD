@@ -16,6 +16,7 @@ echo "<!DOCTYPE html>
 				<div class=\"head\">Method</div>
 				<div class=\"head\">Input</div>
 				<div class=\"head\">Expected</div>
+				<div class=\"head\">Outcome</div>
 				<div class=\"head\">Result</div>
 			</div>" > ../reports/report.html
 
@@ -58,12 +59,13 @@ for file in ../testCases/*; do
 				<div class=\"cell\"><a href=\"../testCases/$file\">Test #$test</a></div>
 				<div class=\"cell\">$method</div>
 				<div class=\"cell\">$input</div>
-				<div class=\"cell\">$expected</div>" >> ../reports/report.html
+				<div class=\"cell\">$expected</div>
+				<div class=\"cell\">$result</div>" >> ../reports/report.html
 
 	if [ "$expected" == "$result" ]; then
-		echo "				<div class=\"cell pass\">$result</div>" >> ../reports/report.html
+		echo "				<div class=\"cell pass\">Pass</div>" >> ../reports/report.html
 	else
-		echo "				<div class=\"cell fail\">$result</div>" >> ../reports/report.html
+		echo "				<div class=\"cell fail\">Fail</div>" >> ../reports/report.html
 	fi
 
 
