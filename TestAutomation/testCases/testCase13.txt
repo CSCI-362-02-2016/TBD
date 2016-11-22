@@ -1,5 +1,5 @@
 ID	13
-Req	Computing the tangent of the input
+Req	Compute the tangent of the input
 Comp	Calculator.java
 Method	public Double calculateMono(MonoOperatorModes tan, Double num)
 Inputs	-1.0
