@@ -28,16 +28,16 @@ Check that we can clone TestAutomation to anywhere and it still runs
 
 Final stuff  
 Fault injections in src 
--Fault 1: Calculator.java, calculateMono(square, num), line 62
---replaced <return num * num> with <return num * num + 1>
--Fault 2: Calculator.java, calculateMono(squareRoot, num), line 67
---replaced <return Math.sqrt(num)> with <return Math.sqrt(num) + 1>
--Fault 3: Calculator.java, calculateMono(oneDevidedBy, num), line 74
---replaced <return 1 / num;> with <return 2 / num;> 
--Fault 4: Calculator.java, calculateMono(cos, num), line 79
---replaced cosine with secant formula
--Fault 5: Calculator.java, calculateMono(tan, num), 87
---replaced tangent with cotangent formula
+-Fault 1: Calculator.java, calculateMono(square, num), line 62  
+--replaced <return num * num> with <return num * num + 1>  
+-Fault 2: Calculator.java, calculateMono(squareRoot, num), line 67  
+--replaced <return Math.sqrt(num)> with <return Math.sqrt(num) + 1>  
+-Fault 3: Calculator.java, calculateMono(oneDevidedBy, num), line 74  
+--replaced <return 1 / num;> with <return 2 / num;>   
+-Fault 4: Calculator.java, calculateMono(cos, num), line 79  
+--replaced cosine with secant formula  
+-Fault 5: Calculator.java, calculateMono(tan, num), 87  
+--replaced tangent with cotangent formula  
 
 Comment code  
 Finished report with everything in it  
