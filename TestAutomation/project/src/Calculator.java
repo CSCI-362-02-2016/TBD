@@ -59,22 +59,32 @@ public class Calculator {
 
 	public Double calculateMono(MonoOperatorModes newMode, Double num) {
 		if (newMode == MonoOperatorModes.square) {
-			return num * num;
+			// Fault Injection 1
+			// return num * num;
+			return num * num + 1;
 		}
 		if (newMode == MonoOperatorModes.squareRoot) {
-			return Math.sqrt(num);
+			// Fault Injection 2
+			// return Math.sqrt(num);
+			return Math.sqrt(num) + 1;
 		}
 		if (newMode == MonoOperatorModes.oneDevidedBy) {
-			return 1 / num;
+		    // Fault Injection 3
+		    // return 1 / num;
+			return 2 / num;
 		}
 		if (newMode == MonoOperatorModes.cos) {
-			return Math.cos(num);
+			// Fault Injection 4
+			// return Math.cos(num);
+			return 1.0 / Math.cos(num);
 		}
 		if (newMode == MonoOperatorModes.sin) {
 			return Math.sin(num);
 		}
 		if (newMode == MonoOperatorModes.tan) {
-			return Math.tan(num);
+			// Fault Injection 5
+			// return Math.tan(num);
+			return 1.0 / Math.tan(num);
 		}
 
 		// never reach
