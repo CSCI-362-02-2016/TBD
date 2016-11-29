@@ -3,5 +3,5 @@ Req	Compute the cosine of the input
 Comp	Calculator.java
 Method	public Double calculateMono(MonoOperatorModes cos, Double num)
 Inputs	1.0
-Expect	0.5403023058681398
+Expect	0.54
 Driver	testDriverCos
