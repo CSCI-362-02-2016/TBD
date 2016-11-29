@@ -4,7 +4,7 @@ Switched projects to pH-7 Simple Java Calculator.
 
 Now focusing on testing the Calculator.java file.
 
--To actually run the calculator GUI, clone the whole repo and run in the terminal.
+-To actually run the calculator GUI, clone the whole repo and run java -jar SimpleJavaCalculator.jar in the terminal.
 
 -To run our testing framework, run scripts/runAllScripts.sh at the command line.
 
