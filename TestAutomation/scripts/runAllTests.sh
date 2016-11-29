@@ -40,6 +40,8 @@ for file in ../testCases/*; do
 
 	#Get result from driver
 	result=$(java -cp "./:../project/src" $driver $input)
+	
+	# need to round the result to 2 deci http://stackoverflow.com/questions/26465496/rounding-up-float-point-numbers-bash
 
 	#Dump test case info into terminal
 	echo "---------------------"
