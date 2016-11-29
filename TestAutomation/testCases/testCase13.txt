@@ -3,5 +3,5 @@ Req	Compute the tangent of the input
 Comp	Calculator.java
 Method	public Double calculateMono(MonoOperatorModes tan, Double num)
 Inputs	-1.0
-Expect	-1.5574077246549023
+Expect	-1.56
 Driver	testDriverTan
