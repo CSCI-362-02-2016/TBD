@@ -42,6 +42,8 @@ for file in ../testCases/*; do
 	result=$(java -cp "./:../project/src" $driver $input)
 	
 	# need to round the result to 2 deci http://stackoverflow.com/questions/26465496/rounding-up-float-point-numbers-bash
+	# http://unix.stackexchange.com/questions/167058/how-to-round-floating-point-numbers-in-shell
+	result=$(echo $result | xargs printf "%.*f\n" $2)
 
 	#Dump test case info into terminal
 	echo "---------------------"
