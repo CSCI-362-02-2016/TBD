@@ -18,7 +18,7 @@ echo "<!DOCTYPE html>
 				<div class=\"head\">Expected</div>
 				<div class=\"head\">Outcome</div>
 				<div class=\"head\">Result</div>
-			</div>" > ../reports/report.html
+			</div>" > ../reports/testReport.html
 
 #Run tests
 for file in ../testCases/*; do
@@ -64,23 +64,23 @@ for file in ../testCases/*; do
 				<div class=\"cell\">$method</div>
 				<div class=\"cell\">$input</div>
 				<div class=\"cell\">$expected</div>
-				<div class=\"cell\">$result</div>" >> ../reports/report.html
+				<div class=\"cell\">$result</div>" >> ../reports/testReport.html
 
 	#Compare the output to expected and determine pass or fail
 	if [ "$expected" == "$result" ]; then
-		echo "				<div class=\"cell pass\">Pass</div>" >> ../reports/report.html
+		echo "				<div class=\"cell pass\">Pass</div>" >> ../reports/testReport.html
 	else
-		echo "				<div class=\"cell fail\">Fail</div>" >> ../reports/report.html
+		echo "				<div class=\"cell fail\">Fail</div>" >> ../reports/testReport.html
 	fi
 
 
-	echo "			</div>" >> ../reports/report.html
+	echo "			</div>" >> ../reports/testReport.html
 
 done 
 
 echo "		</div>
 	</body>
-</html>" >> ../reports/report.html
+</html>" >> ../reports/testReport.html
 
 #Open report
-xdg-open ../reports/report.html
+xdg-open ../reports/testReport.html
